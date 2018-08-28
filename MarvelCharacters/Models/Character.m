@@ -20,10 +20,15 @@
     NSString *path = [NSString stringWithString:[dictionary valueForKeyPath:@"thumbnail.path"]];
     NSString *extension = [NSString stringWithString:[dictionary valueForKeyPath:@"thumbnail.extension"]];
     NSString *imageURL = [NSString stringWithFormat:@"%@.%@", path, extension];
-    
     character.thumbnailURL = [NSURL URLWithString:imageURL];
     
-    NSLog(@"%@", character.thumbnailURL);
+    character.desc = [NSString stringWithString:[dictionary valueForKey:@"description"]];
+    
+    NSArray *urlsDict = [dictionary valueForKey:@"urls"];
+    NSString *detail = [urlsDict[0] objectForKey:@"url"];
+    character.detailURL = [NSURL URLWithString:detail];
+    
+    //NSLog(@"%@", [urlsDict[0] objectForKey:@"url"]);
   }
   
   return character;

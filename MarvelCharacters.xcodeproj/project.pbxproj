@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE02867A2135E557009B3E3A /* CharacterDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0286792135E557009B3E3A /* CharacterDetailTableViewController.m */; };
+		DE02867D2135ECFE009B3E3A /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE02867C2135ECFE009B3E3A /* SafariServices.framework */; };
+		DE02868B2135FED5009B3E3A /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0286812135FED5009B3E3A /* SVRadialGradientLayer.m */; };
+		DE02868C2135FED5009B3E3A /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0286842135FED5009B3E3A /* SVProgressAnimatedView.m */; };
+		DE02868D2135FED5009B3E3A /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0286872135FED5009B3E3A /* SVProgressHUD.m */; };
+		DE02868E2135FED5009B3E3A /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0286882135FED5009B3E3A /* SVIndefiniteAnimatedView.m */; };
+		DE02868F2135FED5009B3E3A /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DE0286892135FED5009B3E3A /* SVProgressHUD.bundle */; };
+		DE0286912135FF01009B3E3A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE0286902135FF01009B3E3A /* QuartzCore.framework */; };
 		DE0C8BCE2134968400870613 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0C8BCD2134968400870613 /* AppDelegate.m */; };
-		DE0C8BD12134968400870613 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0C8BD02134968400870613 /* ViewController.m */; };
 		DE0C8BD42134968400870613 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE0C8BD22134968400870613 /* Main.storyboard */; };
 		DE0C8BD62134968500870613 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE0C8BD52134968500870613 /* Assets.xcassets */; };
 		DE0C8BD92134968500870613 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE0C8BD72134968500870613 /* LaunchScreen.storyboard */; };
@@ -19,11 +26,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE0286782135E557009B3E3A /* CharacterDetailTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CharacterDetailTableViewController.h; sourceTree = "<group>"; };
+		DE0286792135E557009B3E3A /* CharacterDetailTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharacterDetailTableViewController.m; sourceTree = "<group>"; };
+		DE02867C2135ECFE009B3E3A /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		DE0286812135FED5009B3E3A /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		DE0286822135FED5009B3E3A /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		DE0286832135FED5009B3E3A /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		DE0286842135FED5009B3E3A /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		DE0286852135FED5009B3E3A /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		DE0286862135FED5009B3E3A /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		DE0286872135FED5009B3E3A /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		DE0286882135FED5009B3E3A /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		DE0286892135FED5009B3E3A /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		DE02868A2135FED5009B3E3A /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		DE0286902135FF01009B3E3A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DE0C8BC92134968400870613 /* MarvelCharacters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelCharacters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE0C8BCC2134968400870613 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DE0C8BCD2134968400870613 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DE0C8BCF2134968400870613 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		DE0C8BD02134968400870613 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		DE0C8BD32134968400870613 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE0C8BD52134968500870613 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE0C8BD82134968500870613 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,17 +61,66 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE0286912135FF01009B3E3A /* QuartzCore.framework in Frameworks */,
+				DE02867D2135ECFE009B3E3A /* SafariServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE02867B2135ECFE009B3E3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE0286902135FF01009B3E3A /* QuartzCore.framework */,
+				DE02867C2135ECFE009B3E3A /* SafariServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE02867E2135F188009B3E3A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE0C8BE221349F2400870613 /* CharactersListCollectionViewController.h */,
+				DE0C8BE321349F2400870613 /* CharactersListCollectionViewController.m */,
+				DE0286782135E557009B3E3A /* CharacterDetailTableViewController.h */,
+				DE0286792135E557009B3E3A /* CharacterDetailTableViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DE02867F2135F1A4009B3E3A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE0C8BE52134A10E00870613 /* CharacterCollectionViewCell.h */,
+				DE0C8BE62134A10E00870613 /* CharacterCollectionViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE0286802135FED5009B3E3A /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				DE0286812135FED5009B3E3A /* SVRadialGradientLayer.m */,
+				DE0286822135FED5009B3E3A /* SVIndefiniteAnimatedView.h */,
+				DE0286832135FED5009B3E3A /* SVProgressHUD.h */,
+				DE0286842135FED5009B3E3A /* SVProgressAnimatedView.m */,
+				DE0286852135FED5009B3E3A /* SVProgressHUD-Prefix.pch */,
+				DE0286862135FED5009B3E3A /* SVRadialGradientLayer.h */,
+				DE0286872135FED5009B3E3A /* SVProgressHUD.m */,
+				DE0286882135FED5009B3E3A /* SVIndefiniteAnimatedView.m */,
+				DE0286892135FED5009B3E3A /* SVProgressHUD.bundle */,
+				DE02868A2135FED5009B3E3A /* SVProgressAnimatedView.h */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		DE0C8BC02134968400870613 = {
 			isa = PBXGroup;
 			children = (
 				DE0C8BCB2134968400870613 /* MarvelCharacters */,
 				DE0C8BCA2134968400870613 /* Products */,
+				DE02867B2135ECFE009B3E3A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,17 +138,14 @@
 				DE0C8BE82134A13300870613 /* Models */,
 				DE0C8BCC2134968400870613 /* AppDelegate.h */,
 				DE0C8BCD2134968400870613 /* AppDelegate.m */,
-				DE0C8BCF2134968400870613 /* ViewController.h */,
-				DE0C8BD02134968400870613 /* ViewController.m */,
 				DE0C8BD22134968400870613 /* Main.storyboard */,
 				DE0C8BD52134968500870613 /* Assets.xcassets */,
 				DE0C8BD72134968500870613 /* LaunchScreen.storyboard */,
 				DE0C8BDA2134968500870613 /* Info.plist */,
 				DE0C8BDB2134968500870613 /* main.m */,
-				DE0C8BE221349F2400870613 /* CharactersListCollectionViewController.h */,
-				DE0C8BE321349F2400870613 /* CharactersListCollectionViewController.m */,
-				DE0C8BE52134A10E00870613 /* CharacterCollectionViewCell.h */,
-				DE0C8BE62134A10E00870613 /* CharacterCollectionViewCell.m */,
+				DE0286802135FED5009B3E3A /* SVProgressHUD */,
+				DE02867E2135F188009B3E3A /* Controllers */,
+				DE02867F2135F1A4009B3E3A /* Views */,
 			);
 			path = MarvelCharacters;
 			sourceTree = "<group>";
@@ -154,6 +219,7 @@
 				DE0C8BD92134968500870613 /* LaunchScreen.storyboard in Resources */,
 				DE0C8BD62134968500870613 /* Assets.xcassets in Resources */,
 				DE0C8BD42134968400870613 /* Main.storyboard in Resources */,
+				DE02868F2135FED5009B3E3A /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,12 +230,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE0C8BD12134968400870613 /* ViewController.m in Sources */,
 				DE0C8BDC2134968500870613 /* main.m in Sources */,
 				DE0C8BE421349F2400870613 /* CharactersListCollectionViewController.m in Sources */,
+				DE02868B2135FED5009B3E3A /* SVRadialGradientLayer.m in Sources */,
 				DE0C8BE72134A10E00870613 /* CharacterCollectionViewCell.m in Sources */,
+				DE02868C2135FED5009B3E3A /* SVProgressAnimatedView.m in Sources */,
 				DE0C8BCE2134968400870613 /* AppDelegate.m in Sources */,
+				DE02868D2135FED5009B3E3A /* SVProgressHUD.m in Sources */,
 				DE0C8BEB2134A17C00870613 /* Character.m in Sources */,
+				DE02868E2135FED5009B3E3A /* SVIndefiniteAnimatedView.m in Sources */,
+				DE02867A2135E557009B3E3A /* CharacterDetailTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

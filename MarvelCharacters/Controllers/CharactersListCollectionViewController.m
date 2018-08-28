@@ -10,7 +10,8 @@
 #import <CommonCrypto/CommonDigest.h>
 #import "Character.h"
 #import "CharacterCollectionViewCell.h"
-
+#import "CharacterDetailTableViewController.h"
+#import "SVProgressHUD.h"
 
 @interface CharactersListCollectionViewController ()
 
@@ -24,8 +25,10 @@ static NSString * const reuseIdentifier = @"CharacterCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-  [self getCharacters];
+  
+  self.characters = [NSMutableArray array];
+
+  [self getCharacters:0];
 
 }
 
@@ -34,15 +37,14 @@ static NSString * const reuseIdentifier = @"CharacterCell";
     // Dispose of any resources that can be recreated.
 }
 
-- (void) getCharacters {
+- (void) getCharacters:(NSInteger *)offset {
+  [SVProgressHUD show];
   NSURLSession *session = [NSURLSession sharedSession];
   
   // Generate MD5 from Timestamp
   NSString * timestamp = [NSString stringWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]];
   NSString *publicKey = @"2f3f553f47ccae03a0c0c244b628b9d8";
   NSString *privateKey = @"560ca1b5e7c0ab0ce499e5ba0801e7310d75b518";
-  
-  NSLog(@"%@", [NSString stringWithFormat:@"%@/%@/%@", timestamp, privateKey, publicKey]);
   
   NSString *myHash = [self generateMD5:[NSString stringWithFormat:@"%@%@%@", timestamp, privateKey, publicKey]];
   
@@ -52,12 +54,13 @@ static NSString * const reuseIdentifier = @"CharacterCell";
   NSURLQueryItem *hash = [NSURLQueryItem queryItemWithName:@"hash" value:myHash];
   NSURLQueryItem *apiKey = [NSURLQueryItem queryItemWithName:@"apikey" value:publicKey];
   
+  NSString *inToStr = [NSString stringWithFormat: @"%ld", (long)offset];
+  NSURLQueryItem *offse = [NSURLQueryItem queryItemWithName:@"offset" value:inToStr];
+  
   
   //NSURLQueryItem *appKey = [NSURLQueryItem queryItemWithName:@"app_key" value:@"4f0ff1f428531ef475d4ffb22f5c9e79"];
-  components.queryItems = @[ ts, apiKey, hash ];
+  components.queryItems = @[ ts, apiKey, hash, offse ];
   NSURL *url = components.URL;
-  
-  self.characters = [NSMutableArray array];
   
   NSURLSessionDownloadTask *task = [session downloadTaskWithURL: url completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
     
@@ -71,10 +74,12 @@ static NSString * const reuseIdentifier = @"CharacterCell";
       Character *character = [Character characterWithDictionary:dict];
       
       [self.characters addObject:character];
+      
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
       [self.collectionView reloadData];
+      [SVProgressHUD dismiss];
     });
     
   }];
@@ -94,15 +99,19 @@ static NSString * const reuseIdentifier = @"CharacterCell";
   return  output;
 }
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+  if ([segue.identifier isEqualToString:@"showDetail"]) {
+    NSIndexPath *selectedIndexPath = [self.collectionView indexPathsForSelectedItems][0];
+    
+    Character *character = self.characters[selectedIndexPath.row];
+    CharacterDetailTableViewController *characterDetailTableViewController = segue.destinationViewController;
+    
+    characterDetailTableViewController.character = character;
+  }
 }
-*/
 
 #pragma mark <UICollectionViewDataSource>
 
@@ -125,8 +134,18 @@ static NSString * const reuseIdentifier = @"CharacterCell";
   return cell;
 }
 
+
+
 #pragma mark <UICollectionViewDelegate>
 
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+  if (indexPath.row == [self.characters count]-1) {
+    NSInteger *offset = indexPath.row + 1;
+    
+    [self getCharacters:offset];
+  }
+  
+}
 
 #pragma mark <UICollectionViewDelegateFlowLayout>
 

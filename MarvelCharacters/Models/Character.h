@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSURL *thumbnailURL;
+@property (nonatomic, strong) NSString *desc;
+@property (nonatomic, strong) NSURL *detailURL;
 
 + (instancetype) characterWithDictionary:(NSDictionary *) dictionary;
 

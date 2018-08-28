@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CharactersListCollectionViewController : UICollectionViewController<UICollectionViewDelegateFlowLayout>
+@interface CharactersListCollectionViewController : UICollectionViewController<UICollectionViewDelegateFlowLayout, UICollectionViewDelegate>
 
 
 @end
