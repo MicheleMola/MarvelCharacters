@@ -57,12 +57,16 @@ static NSString * const reuseIdentifier = @"CharacterCell";
   NSString *inToStr = [NSString stringWithFormat: @"%ld", (long)offset];
   NSURLQueryItem *offse = [NSURLQueryItem queryItemWithName:@"offset" value:inToStr];
   
-  
-  //NSURLQueryItem *appKey = [NSURLQueryItem queryItemWithName:@"app_key" value:@"4f0ff1f428531ef475d4ffb22f5c9e79"];
   components.queryItems = @[ ts, apiKey, hash, offse ];
   NSURL *url = components.URL;
   
   NSURLSessionDownloadTask *task = [session downloadTaskWithURL: url completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    
+    if (error != nil) {
+      [self showAlert:error.localizedDescription];
+      [SVProgressHUD dismiss];
+      return;
+    }
     
     NSData *data = [[NSData alloc] initWithContentsOfURL:location];
     NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
@@ -84,6 +88,15 @@ static NSString * const reuseIdentifier = @"CharacterCell";
     
   }];
   [task resume];
+}
+
+- (void)showAlert:(NSString *) message {
+  UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Alert" message:message preferredStyle:UIAlertControllerStyleAlert];
+  
+  UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
+  
+  [alert addAction:defaultAction];
+  [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (NSString *) generateMD5:(NSString *) input {

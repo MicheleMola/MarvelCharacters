@@ -8,6 +8,7 @@
 
 #import "CharacterCollectionViewCell.h"
 #import "Character.h"
+#import "SVProgressHUD.h"
 
 @implementation CharacterCollectionViewCell
 
@@ -26,6 +27,10 @@
   
   NSURLSessionDownloadTask *task = [session downloadTaskWithRequest:request completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
     
+    if (error != nil) {
+      return;
+    }
+    
     NSData *data = [NSData dataWithContentsOfURL:location];
     UIImage *image = [UIImage imageWithData:data];
     
@@ -37,5 +42,6 @@
   
   [task resume];
 }
+
 
 @end

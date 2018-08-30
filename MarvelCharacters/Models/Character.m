@@ -28,7 +28,6 @@
     NSString *detail = [urlsDict[0] objectForKey:@"url"];
     character.detailURL = [NSURL URLWithString:detail];
     
-    //NSLog(@"%@", [urlsDict[0] objectForKey:@"url"]);
   }
   
   return character;
