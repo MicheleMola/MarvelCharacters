@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -91,8 +92,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="uZt-Ye-R8m">
+                                                <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="uZt-Ye-R8m">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                                    <gestureRecognizers/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -192,11 +194,44 @@
                         <outlet property="descriptionTextView" destination="mKY-fr-Vbz" id="TMd-zU-0qh"/>
                         <outlet property="imageView" destination="uZt-Ye-R8m" id="az3-3o-fUM"/>
                         <outlet property="nameLabel" destination="BUd-C5-loA" id="JrE-le-h5m"/>
+                        <segue destination="4Tr-PE-rJT" kind="showDetail" identifier="showImage" id="PH3-ee-alk"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L7g-Uc-YdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1996" y="120.98950524737631"/>
+        </scene>
+        <!--Image Controller-->
+        <scene sceneID="4bh-Ki-OaO">
+            <objects>
+                <viewController storyboardIdentifier="ImageController" id="4Tr-PE-rJT" customClass="ImageController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pR0-BU-qBp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="6TJ-DG-seL">
+                                <rect key="frame" x="0.0" y="193.5" width="375" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Z7G-oH-sU4"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6TJ-DG-seL" firstAttribute="centerY" secondItem="HQJ-9I-GTd" secondAttribute="centerY" id="3xM-0m-y4s"/>
+                            <constraint firstItem="HQJ-9I-GTd" firstAttribute="trailing" secondItem="6TJ-DG-seL" secondAttribute="trailing" id="KCr-vh-Ms3"/>
+                            <constraint firstItem="6TJ-DG-seL" firstAttribute="centerX" secondItem="HQJ-9I-GTd" secondAttribute="centerX" id="cIJ-D8-br4"/>
+                            <constraint firstItem="6TJ-DG-seL" firstAttribute="leading" secondItem="HQJ-9I-GTd" secondAttribute="leading" id="eki-Ru-Yak"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HQJ-9I-GTd"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="6TJ-DG-seL" id="R0b-Gp-1cN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hr2-zL-bXs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2792.8000000000002" y="120.98950524737631"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nri-iq-6Kb">

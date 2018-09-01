@@ -9,6 +9,7 @@
 #import "CharacterDetailTableViewController.h"
 #import "Character.h"
 #import <SafariServices/SafariServices.h>
+#import "ImageController.h"
 
 @interface CharacterDetailTableViewController () <SFSafariViewControllerDelegate>
 
@@ -18,6 +19,8 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+  [self setupGesture];
   
   if (self.character) {
     [self downloadImageWithUrl:self.character.thumbnailURL];
@@ -33,6 +36,27 @@
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  if ([segue.identifier isEqualToString:@"showImage"]) {
+    
+    ImageController *imageController = segue.destinationViewController;
+    imageController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    imageController.image = self.image;
+  }
+}
+
+- (void)setupGesture {
+  UITapGestureRecognizer *showImage = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showImage)];
+  showImage.numberOfTapsRequired = 1;
+  
+  [self.imageView addGestureRecognizer:showImage];
+  
+}
+
+- (void)showImage {
+  [self performSegueWithIdentifier:@"showImage" sender:self];
 }
 
 - (IBAction)moreDetailPressed:(UIButton *)sender {
@@ -64,6 +88,7 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
       self.imageView.image = image;
+      self.image = image;
     });
     
   }];

@@ -23,6 +23,7 @@
 		DE0C8BE421349F2400870613 /* CharactersListCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0C8BE321349F2400870613 /* CharactersListCollectionViewController.m */; };
 		DE0C8BE72134A10E00870613 /* CharacterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0C8BE62134A10E00870613 /* CharacterCollectionViewCell.m */; };
 		DE0C8BEB2134A17C00870613 /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0C8BEA2134A17C00870613 /* Character.m */; };
+		DED2980F213A86A000038DAA /* ImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED2980E213A86A000038DAA /* ImageController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,8 @@
 		DE0C8BE62134A10E00870613 /* CharacterCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CharacterCollectionViewCell.m; sourceTree = "<group>"; };
 		DE0C8BE92134A17C00870613 /* Character.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
 		DE0C8BEA2134A17C00870613 /* Character.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Character.m; sourceTree = "<group>"; };
+		DED2980D213A86A000038DAA /* ImageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageController.h; sourceTree = "<group>"; };
+		DED2980E213A86A000038DAA /* ImageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				DE0C8BE321349F2400870613 /* CharactersListCollectionViewController.m */,
 				DE0286782135E557009B3E3A /* CharacterDetailTableViewController.h */,
 				DE0286792135E557009B3E3A /* CharacterDetailTableViewController.m */,
+				DED2980D213A86A000038DAA /* ImageController.h */,
+				DED2980E213A86A000038DAA /* ImageController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 				DE02868C2135FED5009B3E3A /* SVProgressAnimatedView.m in Sources */,
 				DE0C8BCE2134968400870613 /* AppDelegate.m in Sources */,
 				DE02868D2135FED5009B3E3A /* SVProgressHUD.m in Sources */,
+				DED2980F213A86A000038DAA /* ImageController.m in Sources */,
 				DE0C8BEB2134A17C00870613 /* Character.m in Sources */,
 				DE02868E2135FED5009B3E3A /* SVIndefiniteAnimatedView.m in Sources */,
 				DE02867A2135E557009B3E3A /* CharacterDetailTableViewController.m in Sources */,
